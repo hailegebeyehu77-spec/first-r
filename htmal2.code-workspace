@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": ".."
+	},
+	{
+		"path": "../../../Desktop/ha"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "htmal2"
+  }
+}
