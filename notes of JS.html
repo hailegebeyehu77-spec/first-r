@@ -1,0 +1,1625 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <!--switch-->
+    <script>
+      let txt;
+      switch (new Date().getDay()) {
+        case 1:
+          txt = "monday";
+          break;
+        case 2:
+          txt = "tuseday";
+          break;
+        case 3:
+          txt = "wendsday";
+          break;
+        case 4:
+          txt = "thusday";
+          break;
+        case 5:
+          txt = "friday";
+          break;
+        case 6:
+          txt = "satrday";
+          break;
+        case 0:
+          txt = "sunday";
+          break;
+        default:
+          txt = "not yet";
+      }
+      document.getElementById("demo").innerHTML = txt;
+    </script>
+    <!--js-string-concat()-->
+    <p id="demo">Hello world</p>
+    <script>
+      var str1 = "hello";
+      var str2 = "world";
+      var str3 = str1.concat(" ", str2);
+      document.getElementById("demo").innerHTML = str3; //the result is "hello world" because the concat() method concatenates the two strings with a space in between
+    </script>
+    <!--js  converting upper and lower case-->
+    <h1>upper case</h1>
+    <button onclick="convertToUpperCase()">try it</button>
+    <p id="demo">hello world</p>
+    <script>
+      function convertToUpperCase() {
+        let text = document.getElementById("demo").innerHTML;
+        document.getElementById("demo").innerHTML = text.toUpperCase(); //the result is "HELLO WORLD" because the toUpperCase method converts all characters in the string to uppercase
+      }
+    </script>
+    <h1>lower case</h1>
+    <button onclick="convertToLowerCase()">try it</button>
+    <script>
+      function convertToLowerCase() {
+        let text = document.getElementById("demo").innerHTML;
+        document.getElementById("demo").innerHTML = text.toLowerCase(); //the result is "hello world" because the toLowerCase method converts all characters in the string to lowercase
+      }
+    </script>
+    <!--js padend and padstart-->
+    <script>
+      let s = "5";
+      let text = s.padEnd("3", "8");
+      document.getElementById("demo").innerHTML = text; //the result is "588" because the padEnd method pads the string "5" with the string "8" until it reaches a total length of 3 characters
+    </script>
+    <script>
+      let ss = "5";
+      let textt = ss.padStart("4", "8");
+      document.getElementById("demo").innerHTML = textt; //the result is "8885" because the padStart method pads the string "5" with the string "8" until it reaches a total length of 4 characters
+    </script>
+    <!--js string-search-->
+    <script>
+      let tex = "hello world, welcome to the universe.";
+      let result = tex.search("welcome");
+      document.getElementById("demo").innerHTML = result; //the result is 13 because the word "welcome" starts at index 13 in the string
+    </script>
+    <!--js string-replace-->
+    <script>
+      let t = "visit Microsoft!";
+      let newText = t.replace("Microsoft", "W3Schools");
+      document.getElementById("demo").innerHTML = newText; //the result is "visit W3Schools!"
+    </script>
+    <!--js string-extract-->
+    <!--There are 3 methods for extracting a part of a string:
+     1.slice(start, end)
+      2.substring(start, end)
+      3.substr(start, length)-->
+    <!--1.string-slice-->
+    <script>
+      let te = "Hello world!";
+      let resul = te.slice(3, 7);
+      document.getElementById("demo").innerHTML = resul; //the result is "lo w" because the slice method extracts characters from index 3 to index 6 (7 is not included)
+    </script>
+    <script>
+      let tes = "Hello world!";
+      let resu = tes.slice(-6, -1);
+      document.getElementById("demo").innerHTML = resu; //the result is "world" because the slice method extracts characters from index -6 to index -2 (the last character is not included)
+    </script>
+    <!--2.string-substr-->
+    <script>
+      let a = "Hello world!";
+      let b = a.substr(3, 4);
+      document.getElementById("demo").innerHTML = b; //the result is "lo w" because the substr method extracts 4 characters starting from index 3
+    </script>
+    <!--3.string-substring-->
+    <script>
+      let x = "Hello world!";
+      let l = x.substring(3, 7);
+      document.getElementById("demo").innerHTML = l; //the result is "lo w" because the substring method extracts characters from index 3 to index 6 (7 is not included)
+      //slice and substring methods are similar but slice can accept negative indices to count from the end of the string, while substring does not support negative indices
+    </script>
+    <!--js string methods-->
+    <!--1 at (position) method-->
+    <script>
+      let str = "HELLO WORLD";
+      let char = str.at(-8);
+      document.getElementById("demo").innerHTML = char; //the result is "L" because the at() method returns the character at the specified index (8 in this case) in the string
+    </script>
+    <!--2 charAt (position) method-->
+    <script>
+      let strr = "HELLO WORLD";
+      let charr = strr.charAt(8);
+      document.getElementById("demo").innerHTML = charr; //the result is "o" because the charAt() method returns the character at the specified index (8 in this case) in the string
+      //at and charAt methods are similar but at() can also accept negative indices to count from the end of the string, while charAt() does not support negative indices
+    </script>
+    <script>
+      let stri = "haile gebeyehu";
+      let na = stri[4];
+      document.getElementById("demo").innerHTML = na; //the result is "e" because the character at index 4 in the string "haile gebeyehu" is "e"
+    </script>
+    <!--3 charCodeAt (position) method-->
+    <script>
+      let strrr = "HELLO WORLD";
+      let charCode = strrr.charCodeAt(8);
+      document.getElementById("demo").innerHTML = charCode; //the result is 111 because the charCodeAt() method returns the Unicode value of the character at the specified index (8 in this case) in the string
+    </script>
+    <!--4 codePointAt (position) method-->
+    <script>
+      let strrrr = "HELLO WORLD";
+      let codePoint = strrrr.codePointAt(8);
+      document.getElementById("demo").innerHTML = codePoint; //the result is 111 because the codePointAt() method returns the Unicode code point of the character at the specified index (8 in this case) in the string
+    </script>
+    <!--2.string-split-->
+    <script>
+      let xt = "How are you doing today?";
+      let lt = xt.split(" ");
+      document.getElementById("demo").innerHTML = lt; //the result is "How,are,you,doing,today?" because the split method splits the string into an array of substrings based on the specified separator (in this case, a space)
+    </script>
+    <!--srting.trim method-->
+    <script>
+      let strring = "any text        .";
+      document.getElementById("demo").innerHTML = strring.trim(); //the result is any text.this method delete the space.
+    </script>
+    <!--function= a section of reusable code,declare code once use it whenever you want,call the function to execute that code-->
+    <script>
+       function myfunction{
+      return "hell";
+       }
+       let hai = myfunction();
+       document.getElementById("demo").innerHTML = hai; //the result is "hell" because the myfunction() function returns the string "hell"
+    </script>
+    <script>
+        let ta = "The temperature is " + toCelsius(77) + " Celsius.";
+        document.getElementById("demo").innerHTML = ta;
+
+        function toCelsius(fahrenheit) {
+          return (5 / 9) * (fahrenheit - 32); //the result is "The temperature is 25 Celsius." because the toCelsius() function converts the temperature from Fahrenheit to Celsius using the formula (5/9) * (fahrenheit-32)
+        }
+        <!--to find a number is even or odd-->
+      /*
+        <script>
+         function name(z) {
+          if (z % 2 === 0) {
+            document.getElementById("demo").innerHTML = "even";
+          } else {
+            document.getElementById("demo").innerHTML = "odd";
+          }
+          return z;
+        }
+      name();
+    </script>
+
+    <!--or-->
+    <script>
+      function iseven(num) {
+        return num % 2 === 0 ? true : false;
+      }
+      document.getElementById("demo").innerHTML = iseven(4);
+    </script>
+    <!--email checker-->
+
+    <script>
+      function isvalidemail(email) {
+        return include("@") && include(".com") ? true : false;
+      }
+      docmunt.getElementById("demo").innerHTML = isvalidemail("haile @.com");
+    </script>
+    <!--function calling another function-->
+    <script>
+      function sayHello() {
+        return "Hello World";
+      }
+
+      function showHello() {
+        document.getElementById("demo").innerHTML = sayHello(); //the result is "Hello World" because the showHello() function calls the sayHello() function and sets the innerHTML of the element with id "demo" to the returned value of sayHello()
+      }
+
+      showHello();
+    </script>
+    <!--function with parameters-->
+    <script>
+      function multiply(a, b) {
+        return a * b;
+      }
+      let ult = multiply(4, 3);
+      document.getElementById("demo").innerHTML = "The result is " + ult; //the result is "The result is 12" because the multiply() function takes two parameters (a and b), multiplies them together, and returns the result. The variable ult stores the returned value of multiply(4, 3), which is 12, and then it is displayed in the element with id "demo"
+    </script>
+    <!--function with default parameters-->
+    <script>
+      function greet(name = "Guest") {
+        return "Hello, " + name + "!"; //the result is "Hello, Guest!" because the greet() function has a default parameter "name" with the value "Guest". If no argument is passed when calling the function, it uses the default value. In this case, since no argument is provided, it returns "Hello, Guest!"
+      }
+    </script>
+    <!--return statement-->
+    <script>
+      function multiply(a, b) {
+        return a * b;
+      }
+      let total = multiply(2, 3) * 10;
+
+      document.getElementById("demo").innerHTML = "The total is " + total; //the result is "The total is 60" because the multiply() function returns the product of a and b (2 * 3 = 6), and then this result is multiplied by 10 to get the total (6 * 10 = 60)
+    </script>
+    <!--function with conditional return-->
+    <script>
+      function checkAge(age) {
+        if (age < 18) {
+          return "Too young";
+        }
+        return "Access granted";
+      }
+
+      answer = checkAge(16);
+
+      document.getElementById("demo").innerHTML = answer; //the result is "Too young" because the checkAge() function checks if the age is less than 18. Since 16 is less than 18, it returns "Too young". If the age were 18 or greater, it would return "Access granted".
+    </script>
+    <!--arguments-->
+    <script>
+      function sum() {
+        let total = 0;
+        for (let i = 0; i < arguments.length; i++) {
+          total += arguments[i];
+        }
+        return total;
+      }
+      document.getElementById("demo").innerHTML = sum(1, 2, 3, 4, 5); //the result is "15" because the sum() function uses the arguments object to iterate through all the arguments passed to the function and adds them together. In this case, it sums 1 + 2 + 3 + 4 + 5, which equals 15, and then returns that total.
+    </script>
+    <script>
+      function findMax() {
+        let max = -Infinity;
+        for (let i = 0; i < arguments.length; i++) {
+          if (arguments[i] > max) {
+            max = arguments[i];
+          }
+        }
+        return max;
+      }
+      document.getElementById("demo").innerHTML = findMax(4, 5, 6); //the result is "6" because the findMax() function iterates through all the arguments passed to it and keeps track of the maximum value found. In this case, it compares 4, 5, and 6, and determines that 6 is the largest number, which is then returned and displayed in the element with id "demo"
+    </script>
+    <script>
+      function sumall() {
+        let ab = 0;
+        for (ab = 0; ab < arguments.length; ab++) {
+          ab += arguments[ab];
+        }
+        return ab;
+      }
+      document.getElementById("demo").innerHTML = sumall(1, 2, 3, 4, 5); //the result is "15" because the sumall() function is intended to sum all the arguments passed to it. However, there is a syntax error in the line "ab + = arguments[ab];" which should be "ab += arguments[ab];". Assuming that correction is made, the function would iterate through the arguments (1, 2, 3, 4, 5) and add them together to return a total of 15, which would then be displayed in the element with id "demo".
+    </script>
+    <script>
+      // Function Declaration (hoisted)
+      function greet(name) {
+        return `Hello, ${name}!`;
+      }
+      document.getElementById("demo").innerHTML = greet(); // its scope. This means that the function can be called before it is defined in the code, allowing us to log the greeting for "Alice" without any issues.
+    </script>
+    <script>
+      const factorial = function fact(n) {
+        if (n <= 1) return 1;
+        return n * fact(n - 1); // Can use the name inside
+      };
+      console.log(factorial(5)); // 120
+      // fact(5) // Error! fact is not defined outside
+      //the result is "120" because the factorial variable is assigned an anonymous function that calculates the factorial of a number n. The function uses recursion by calling itself with n - 1 until it reaches the base case where n is less than or equal to 1, at which point it returns 1. When we call factorial(5), it computes 5 * 4 * 3 * 2 * 1, resulting in 120. The name "fact" is only accessible within the function itself and cannot be called from outside, which is why calling fact(5) would result in an error.
+    </script>
+    <script>
+      let sum = add(1, 3); //in function declaration, the function is hoisted to the top of its scope, allowing us to call it before it is defined in the code. This means that we can calculate the sum of 1 and 3 using the add() function without any issues, even though the function is defined after the call to add(1, 3).
+      function add(a, b) {
+        return a + b;
+      }
+      document.getElementById("demo").innerHTML = sum; //the result is "4" because the add() function is a function declaration, which is hoisted to the top of its scope. This means that the function can be called before it is defined in the code, allowing us to calculate the sum of 1 and 3 without any issues.
+    </script>
+    <script>
+      let sum1 = addd(2, 4); //the result is "TypeError: addd is not a function" because the addd variable is assigned a function expression, which is not hoisted. This means that the function cannot be called before it is defined in the code. Since we are trying to call addd(2, 4) before the function expression is assigned to the addd variable, it results in a TypeError indicating that addd is not a function.
+      const addd = function (a, b) {
+        return a + b;
+      };
+      document.getElementById("demo").innerHTML = sum1;
+    </script>
+    <!--object-->
+    <script>
+      const person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 30,
+      };
+      document.getElementById("demo").innerHTML =
+        person.firstName + " " + person.lastName; //the result is "John Doe" because the person object has properties firstName and lastName, which are accessed using dot notation to concatenate the first name and last name with a space in between.
+    </script>
+    <!--empty object-->
+    <script>
+      person = {};
+      person.name = "Alice";
+      person.age = 25;
+      document.getElementById("demo").innerHTML =
+        person.name + " is " + person.age + " years old."; //the result is "Alice is 25 years old." because we first create an empty object called person, then we add properties name and age to it. Finally, we access these properties to construct a string that describes Alice's name and age, which is displayed in the element with id "demo".
+    </script>
+    <!--object with methods-->
+    <script>
+      const perso = {
+        firstName: "Jane",
+        lastName: "Smith",
+        fullName: function () {
+          return this.firstName + " " + this.lastName; //the result is "Jane Smith" because the fullName method uses the this keyword to access the firstName and lastName properties of the person1 object, concatenating them with a space in between to return the full name.
+        },
+      };
+      document.getElementById("demo").innerHTML = perso.fullName();
+    </script>
+    <!--object-adding methods-->
+    <script>
+      peron = {
+        fname: "haile",
+        lname: "gebeyehu",
+      };
+      peron.fullname = function () {
+        return this.fname + " " + this.lname;
+      };
+      document.getElementById("demo").innerHTML = peron.fullname(); //the result is "haile gebeyehu" because we create an object called peron with properties fname and lname, and then we add a method fullname to the object that returns the full name by concatenating fname and lname with a space in between. Finally, we call the fullname method to display the full name in the element with id "demo".
+    </script>
+    <!--object-without parentheses-->
+    <script>
+      const person2 = {
+        name: "Alice",
+        age: 25,
+        greet: function () {
+          return "Hello, " + this.name + "!"; //the result is "Hello, Alice!" because the greet method uses the this keyword to access the name property of the person2 object and constructs a greeting message that includes the person's name.
+        },
+      };
+      document.getElementById("demo").innerHTML = person2.greet; //the result is "function () { return "Hello, " + this.name + "!"; }" because we are accessing the greet method without parentheses, which returns the function definition itself rather than executing it. To get the greeting message, we would need to call the method with parentheses like person2.greet().
+    </script>
+    <!--object with nested objects-->
+    <script>
+      const person1 = {
+        name: "John",
+        age: 30,
+        address: {
+          city: "New York",
+          country: "USA",
+        },
+      };
+      document.getElementById("demo").innerHTML =
+        person1.name +
+        " lives in " +
+        person1.address.city +
+        ", " +
+        person1.address.country; //the result is "John lives in New York, USA" because the person1 object has a nested object called address, which contains properties city and country. We access these nested properties using dot notation to construct a string that describes where John lives, which is displayed in the element with id "demo".
+    </script>
+    <!--object properties-->
+    <script>
+      const pers = {
+        name: "Alice",
+        age: 25,
+      };
+      document.getElementById("demo").innerHTML = pers.name; //the result is "Alice" because we access the name property of the person2 object using dot notation, which returns the value "Alice".
+    </script>
+    <!--bracket notation-->
+    <script>
+      const person3 = {
+        fname: "Bob",
+        lname: "Johnson",
+      };
+      let n1 = "fname";
+      let n2 = "lname";
+      document.getElementById("demo").innerHTML =
+        person3[n1] + " " + person3[n2]; //the result is "Bob Johnson" because we access the properties of the person3 object using bracket notation with the variables n1 and n2, which hold the strings "fname" and "lname". This allows us to retrieve the values of fname and lname from the person3 object and concatenate them with a space in between.
+    </script>
+    <!--delete properties-->
+    <script>
+            const person4={
+      fname = 'haile',
+      age = 30,
+      }
+      delete person4.age;
+      document.getElementById("demo").innerHTML = person4.age; //the result is "undefined" because we use the delete operator to remove the age property from the person4 object. After deletion, trying to access person4.age returns undefined since the property no longer exists in the object.
+    </script>
+    <!--object-nasted-->
+    <script>
+      const person5={
+        name:"aliam",
+        age: 28,
+        const r={
+          city: "Addis Ababa",
+          country: "Ethiopia"
+        }
+      }
+      document.getElementById('demo').innerHTML = person5.r.city;
+    </script>
+    <!--scope-->
+    <!--global scope -->
+    <script>
+      let carName = "Volvo";
+      myFunction(); //global is declarid a value outside of the function.
+
+      function myFunction() {
+        document.getElementById("demo").innerHTML = "I can display " + carName; //the result is I can display volvo.
+      }
+    </script>
+    <!--local scope -->
+    <script>
+      //local is decleard inside the function, when we decleard,No scripts or functions outside the function can access them.
+      myfun();
+      function myfun() {
+        let car = "volvo";
+        docmunt.getElementById("demo1").innerHTML = car; //the out pot become volvo
+      }
+      docmunt.getElementById("demo2").innerHTML = car; //this will be undefined.b/c outside of the function.
+    </script>
+    <!--automatically global-->
+    <script>
+      myFunction();
+      // code here can use carName as a global variable
+      document.getElementById("demo").innerHTML = "I can display " + carName; //If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable.
+
+      function myFunction() {
+        carName = "Volvo";
+      }
+    </script>
+    <!--date-when we add a month higher than 11 ,will not result in an error but add the over flow to the next year.-->
+    <script>
+      const d = new Date(2018, 15, 23, 33, 45, 23, 34); //inside the bracket(year, month, day, hour, min, s, ms).
+      document.getElementById("demo").innerHTML = d;
+    </script>
+    <!--1.date-get-->
+    <!--to get current weekend-->
+    <script>
+      const da = new Date();
+      document.getElementById("demo").innerHTML = da;
+    </script>
+    <!--to get current or the given year-->
+    <script>
+      let ye = new Date("2023-5-7");
+      document.getElementById("demo").innerHTML = ye.getFullYear();
+    </script>
+    <script>
+      let yr = new Date();
+      document.getElementById("demo").innerHTML = yr.getFullYear();
+    </script>
+    <!--for getday you can add a day name -->
+    <script>
+      const days = [
+        "sunday",
+        "monday",
+        "tuesday",
+        " wendsday",
+        "thursday",
+        "friday",
+        "saturday",
+      ];
+      let dt = new Date();
+      document.getElementById("demo").innerHTML = days[dt.getDay()];
+    </script>
+    <!--2.date-set-->
+    <!--setYear-->
+    <script>
+      let yy = new Date("January 04, 2025");
+      yy.setFullYear(2020, 11, 2);
+      document.getElementById("demo").innerHTML = yy;
+    </script>
+    <!--setMonth-->
+    <script>
+      let mm = new Date("January 04, 2024");
+      mm.setMonth(11);
+      document.getElementById("demo").innerHTML = mm; //like those do others (setDay, setTime, setSec...)
+    </script>
+    <!--Array-startes from '0'-->
+    <script>
+      const fruits = ["banana", "orange", "pineapple"];
+      document.getElementById("demo").innerHTML = fruits[2]; //the result is pineapple.
+    </script>
+    <!--Array.length-->
+    <script>
+      const fruit = ["banana", "orange", "pineapple"];
+      document.getElementById("demo").innerHTML = fruit.length; //the result is 3.
+    </script>
+    <!--looping an Array(for loop)-->
+    <script>
+      const frui = ["banana", "orange", "mango", "Apple"];
+      let e = "<ul>";
+      for (i = 0; i < frui.length; i++) {
+        e += "<li>" + frui[i] + "</li>";
+      }
+      e += "</ul>";
+      document.getElementById("demo").innerHTML = e;
+    </script>
+    <!--Adding Array elments 
+    1.push() or length-->
+    <button onclick="ff()">try it</button>
+    <script>
+      const f = ["ornange", "mango", "avocado", "banana"];
+      document.getElementById("demo").innerHTML = f;
+      function ff() {
+        f.push("Apple"); //or, f[f.length]='Apple'
+        document.getElementById("demo").innerHTML = f;
+      }
+    </script>
+    <!--adding element with high index-->
+    <script>
+      const r = ["ornange", "mango", "avocado", "banana"];
+      r[7] = "lemon";
+      let tr = " ";
+      for (i = 0; i < r.length; i++) {
+        tr += "<li>" + r[i] + "</li>";
+      }
+      document.getElementById("demo").innerHTML = r; //the result..
+    </script>
+    <script>
+      const person = [];
+      person[0] = "John";
+      person[1] = "Doe";
+      person[2] = 46;
+      document.getElementById("demo").innerHTML =
+        person[0] + " " + person.length;
+    </script>
+    <!---to check an array -->
+    <script>
+      const fruits = ["Banana", "Orange", "Apple"];
+      document.getElementById("demo").innerHTML = Array.isArray(fruits);
+    </script>
+    <!--Nested js object and Array-->
+    <script>
+      let x='';
+      const namm={
+        name: "hh",
+        age : 33,
+        cars: [
+          {name :'ford',models:['fiesta', 'ford'];},
+          {name:'BMW', models:['325', 'x33']},
+        {name:'fiat',moddels:['500','panda']},
+        ],
+      }
+      for(let i in namm.cars){
+         x +='<h2>'+ namm.cars[i].name;+'</h2>';
+      }
+      for(let j in namm.cars[i].models){
+        x += namm.cars[i].models[j] +'<br>';
+      }
+       document.getElementById("demo").innerHTML = x;
+    </script>
+    <!--Array-Methods-->
+    <!--1.length-length(size)of an array-->
+    <script>
+      const ur = ["baby", "mita", "sisay", "habte"];
+      document.getElementById("demo").innerHTML = ur.length; //the resutt is 4
+    </script>
+    <script>
+      const ur = ["baby", "mita", "sisay", "habte"];
+      ur.length = 2;
+      document.getElementById("demo").innerHTML = ur; //the result is baby,mita.
+    </script>
+    <!--2.tostring()-comma separated strings-->
+    <script>
+      const yo = ["baby", "mita", "sisay", "habte"];
+      document.getElementById("demo").innerHTML = yo.toString();
+    </script>
+    <!--3.The at()method -> indexed element from an array-->
+    <script>
+      const z = ["baby", "mita", "seni", "teddy"];
+      document.getElementById("demo").innerHTML = z.at(2); //the result is seni.
+    </script>
+    <!--or we use [], insted of at() -->
+    <script>
+      const yo = ["baby", "mita", "sisay", "habte"];
+      document.getElementById("demo").innerHTML = yo[2]; //the result is seni.
+    </script>
+    <!--4.Array join-we use any symbol inside of a join() bracket to searet items-->
+    <script>
+      const o = ["baby", "mita", "sisay", "habte"];
+      document.getElementById("demo").innerHTML = o.join(" & ");
+    </script>
+    <!--5.popping and pushing-->
+    <!--popping - items out of an array-->
+    <script>
+      const q = ["baby", "mita", "sisay", "habte"];
+      q.pop();
+      document.getElementById("demo").innerHTM = q;
+    </script>
+    <!--the popp method returns the new arrey length-->
+    <script>
+      const kk = ["baby", "mita", "sisay", "habte"];
+      document.getElementById("demo").innerHTML = kk.pop("hale");
+    </script>
+    <!--pushing - items into an array-->
+    <script>
+      const v = ["baby", "mita", "sisay", "habte"];
+      v.push("haile");
+      document.getElementById("demo").innerHTML = v;
+    </script>
+    <!--the push method returns the new array length-->
+    <script>
+      const h = ["baby", "mita", "sisay", "habte"];
+      document.getElementById("demo").innerHTML = h.push("hale");
+    </script>
+    <!--6.shifting method-removes the first array element and shift all other elements to a lower index-->
+    <script>
+      const lk = ["baby", "mita", "sisay", "habte"];
+      lk.shift();
+      document.getElementById("demo").innerHTML = lk; // the result is mita, sisay, habte
+    </script>
+    <script>
+      const ok = ["baby", "mita", "sisay", "habte"];
+      document.getElementById("demo").innerHTML = ok;
+      ok.shift();
+      document.getElementById("demo1").innerHTML = ok;
+    </script>
+    <!--7.unshift method-add a new element to an arrey(at the beginning)-->
+    <script>
+      const kl = ["baby", "mita", "sisay", "habte"];
+      kl.unshift("haile");
+      document.getElementById("demo").innerHTML = kl;
+    </script>
+    <script>
+      const ko = ["baby", "mita", "sisay", "habte"];
+      document.getElementById("demo").innerHTML = ko;
+      ko.unshift("haile");
+      document.getElementById("demo1").innerHTML = ko;
+    </script>
+    <!--changing elements-->
+    <script>
+      const oo = ["baby", "mita", "sisay", "habte"];
+      document.getElementById("demo").innerHTML = oo;
+      oo[0] = "haile";
+      document.getElementById("demo1").innerHTML = oo;
+    </script>
+    <!--deleting elements from an array-->
+    <script>
+      const nm = ["baby", "mita", "sisay", "habte"];
+      document.getElementById("demo").innerHTML =
+        "the first element is" + nm[0];
+      delete nm[0];
+      document.getElementById("demo1").innerHTML =
+        "the first element is" + nm[0];
+    </script>
+    <!--merging array(concating)-means joining strings end to end-->
+    <!--array concat()-->
+    <script>
+      const boys = ["baby", "henok", "nati", "biruk"];
+      const girls = ["kal", "hiwi", "betty"];
+      const family = ["father", "mother", "sister"];
+      document.getElementById("demo1").innerHTML = boys.concat(girls, family);
+    </script>
+    <script>
+      const myArray = ["Emil", "Tobias", "Linus"];
+      const myChildren = myArray.concat("Peter", "haile");
+      document.getElementById("demo").innerHTML = myChildren; //like pushing
+    </script>
+    <!--8.array copyWithin-copy array elements to another position in an array.-->
+    <!---array.copyWithin(target, start, end)-->
+    <!--target (required): Index position to copy the elements to
+    start (optional): Index position to start copying from (default: 0)
+    end (optional): Index position to stop copying (default: array.length)-->
+    <!--Note
+    The copyWithin() method overwrites the existing values. 
+    The copyWithin() method does not add items to the array. 
+    The copyWithin() method does not change the length of the array.-->
+    <script>
+      const fruits = ["apple", "banana", "orange", "grape", "mango"];
+      // Copy elements from index 2-4 to index 0
+      document.getElementById("demo").innerHTML = fruits.copyWithin(0, 2, 4); // ['orange', 'grape', 'orange', 'grape', 'mango']
+      // 'orange' and 'grape' are copied to the beginning
+    </script>
+    <script>
+      const nb = ["peter", "marta", "dive", "mulu"];
+      document.getElementById("demo").innerHTML = nb.copyWithin(2, 0); //the result is peter,marta,peter,mita.
+    </script>
+    <script>
+      const letters = ["a", "b", "c", "d", "e"];
+      // Copy from index 2 to the end, starting at index 0
+      letters.copyWithin(0, 2);
+      console.log(letters); // ['c', 'd', 'e', 'd', 'e']
+    </script>
+    <!--9.Array flat() -> is to convert a multi-dimensional array into a one-dimensional array.-->
+    <script>
+      const rr = [
+        [1, 2],
+        [3, 4],
+        [5, 6],
+      ];
+      document.getElementById("demo").innerHTML = rr.flat(); //the out put is 1,2,3,4,5,6
+    </script>
+    <script>
+      const Arr = [
+        [1, 2],
+        [3, 4],
+        [5, 6],
+      ];
+      document.getElementById("demo").innerHTML = JSON.stringify(Arr.flat()); //the out put is[1,2,3,4,5,6]
+    </script>
+    <!--10.Array flatMap()-first maps all elements of an array and then creats a new array by flattening the array.-->
+    <script>
+      const myArr = [1, 2, 3, 4, 5, 6];
+      const newArr = myArr.flatMap((x) => [x, x * 10]);
+      document.getElementById("demo").innerHTML = newArr;
+    </script>
+    <!--11.array splicing() and array slice() method-->
+    <!--splice() method can be used to add new items to an array-->
+    <script>
+      const fruits = ["apple", "banana", "orange", "grape", "mango"]; //.splice(a,b)=>a is index want to remove, b is number of values to remove
+
+      // Remove 2 elements starting from index 1
+      const removed = fruits.splice(1, 2);
+      console.log(fruits); // ['apple', 'grape', 'mango']
+      console.log(removed); // ['banana', 'orange']
+    </script>
+    <script>
+      const neew = ["banana", "mango", "orange", "papaya"];
+      document.getElementById("demo").innerHTML = neew.splice(2, 1);
+    </script>
+    <!--Js Array-search-->
+    <!--Array indexOf()->is serches an arrey for an elements value and returns its postiton
+    note- the first items has position 0, the secound eitem has position 1-->
+    <!--indexOf()-returns -1 if the items is not found-->
+    <script>
+      const wxw = ["banana", "mango", "orange", "papaya"];
+      document.getElementById("demo").innerHTML = wxw.indexOf("banana"); //the result is 0
+    </script>
+    <!--lastindexOf()-same as Array.indexOf() but returns the position of the last occurrence of the specified elements-->
+    <script>
+      const xw = ["banana", "mango", "orange", "papaya"];
+      document.getElementById("demo").innerHTML = xw.lastIndexOf("orange"); //the result is 2
+    </script>
+    <!--js array includes()->the reture is if the item is allow inside of an array return to TRUE if it doesn't allow FALSE.-->
+    <script>
+      const vc = ["banana", "mango", "orange", "papaya"];
+      document.getElementById("demo").innerHTML = vc.includes("banana"); //the result is true
+    </script>
+    <!--JS Array find()-returns the value of the first array element that passes a test function-->
+    <script>
+      const vcv = [22, 34, 10, 16];
+      document.getElementById("demo").innerHTML =
+        "the first number over 18 is " + vcv.find(over); //the result is the first number over 18 is 22.
+      function over(value, array, index, haile) {
+        return value > 18;
+      }
+    </script>
+    <!--JS Array findIndex()->returns the index of the first array element that passes a test function-->
+    <script>
+      const vv = [7, 12, 22, 34, 10, 16];
+      document.getElementById("demo").innerHTML =
+        "the first number over 18 has index " + vv.findIndex(over); //the first number over 18 has index 2
+      function over(value, array, index, haile) {
+        return value > 18;
+      }
+    </script>
+    <!--JS Array findLast()-method that will start from the end of an array and return the value of the first element that satisfies a condition.-->
+    <script>
+      const ww = [7, 12, 22, 34, 10, 16];
+      document.getElementById("demo").innerHTML =
+        "the last number over 18 has index " + ww.findLast(over); //the last number over 18 has index 34
+      function over(value, array, index, haile) {
+        return value > 18;
+      }
+    </script>
+    <script>
+      const temp = [27, 28, 30, 40, 42, 35, 30];
+      let high = temp.findLast((x) => x > 40);
+
+      document.getElementById("demo").innerHTML =
+        "The last temperature over 40 was " + high; //the result is -the last temprature over 40 was 42
+    </script>
+    <!--JS Array findLastIndex()- method finds the index of the last element that satisfies a condition.-->
+    <script>
+      const pm = [27, 28, 30, 40, 42, 35, 30];
+      let pos = pm.findLastIndex((x) => x > 40);
+
+      document.getElementById("demo").innerHTML =
+        "The last temperature over 40 was in position " + pos; //the result is -the last temoruture over 40 was 42
+    </script>
+    <!--JS sort() -a method sorts an array alphabetically-->
+    <script>
+      const cc = ["papaya", "mango", "orange", "banana"];
+      document.getElementById("demo").innerHTML = cc.sort(); //the result is banana,mango, orange, papaya
+    </script>
+    <!--reverse()-is reverses the elements in an array -->
+    <script>
+      const jc = ["mango", "papaya", "orange", "banana"];
+      document.getElementById("demo").innerHTML = jc.reverse(); //the result is banana, orange, papaya,mango
+    </script>
+    <!--we combaind both sort() and reverse()-you can sort an array in desending order-->
+    <script>
+      // Create and display an array:
+      const its = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo1").innerHTML = its;
+
+      // First sort the array
+      its.sort();
+
+      // Then reverse it:
+      its.reverse();
+
+      document.getElementById("demo2").innerHTML = its;
+    </script>
+    <!--JS Array toSrted()-method as a safe way to sort an array without altering the original array.-->
+    <!--The difference between toSorted() and sort() is that the first method creates a new array, keeping the original array unchanged, while the last method alters the original array.-->
+    <script>
+      const months = ["Jan", "Feb", "Mar", "Apr"];
+      const sorted = months.toSorted();
+
+      document.getElementById("demo").innerHTML = sorted; //the result is Apr,Feb, Mar,Jan
+    </script>
+    <!--JS Array toReversed()- method as a safe way to reverse an array without altering the original array.-->
+    <!--The difference between toReversed() and reverse() is that the first method creates a new array, keeping the original array unchanged, while the last method alters the original array.-->
+    <script>
+      const month = ["Jan", "Feb", "Mar", "Apr"];
+      const reversed = month.toReversed();
+      document.getElementById("demo").innerHTML = reversed;
+    </script>
+    <!--numeric sort()->If numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1"-->
+    <!--Because of this, the sort() method will produce incorrect result when sorting numbers.
+      You can fix this by providing a compare function:-->
+    <!--When the sort() function compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.
+
+    ->If the result is negative, a is sorted before b.
+
+    -If the result is positive, b is sorted before a.
+
+    -If the result is 0, no changes are done with the sort order of the two values.
+
+    Example:
+
+    The compare function compares all the values in the array, two values at a time (a, b).
+
+    When comparing 40 and 100, the sort() method calls the compare function(40, 100).
+
+    The function calculates 40 - 100 (a - b), and since the result is negative (-60),
+      the sort function will sort 40 as a value lower than 100.
+
+    You can use this code snippet to experiment with numerically and alphabetically sorting:-->
+    <script>
+      const ts = (19, 77, 89, 100, 54, 78);
+      ts.sort(function points(l, k) {
+        return l - k;
+      });
+      document.getElementById("demo").innerHTML = ts;
+    </script>
+    <button onclick="myFunction1()">Sort Alphabetically</button>
+    <button onclick="myFunction2()">Sort Numerically</button>
+    <script>
+      const points = [40, 100, 1, 5, 25, 10];
+      document.getElementById("demo").innerHTML = points;
+
+      function myFunction1() {
+        points.sort();
+        document.getElementById("demo").innerHTML = points;
+      }
+      function myFunction2() {
+        points.sort(function (a, b) {
+          return a - b;
+        });
+        document.getElementById("demo").innerHTML = points;
+      }
+    </script>
+    <!--the fisher yates method->The points.sort() method in the example above is not accurate.
+     It will favor some numbers over others.
+
+    The most popular correct method, is called the Fisher Yates shuffle,
+    and was introduced in data science as early as 1938!->kened yelale seicheh eyew-->
+
+    <!--Find the Lowest(or Highest) Array Value-->
+    <!--There are no built-in functions for finding the max or min value in an array.
+
+      To find the lowest or highest value you have 3 options:
+              -Sort the array and read the first or last element
+                  -Use Math.min() or Math.max()
+                          -Write a home made function
+                                                      -->
+    <script>
+      const poi = [40, 100, 1, 5, 25, 10];
+      poi.sort(function (a, b) {
+        return b - a;
+      });
+      document.getElementById("demo").innerHTML =
+        "the highest number is" + poi[0];
+    </script>
+    <script>
+      const oints = [40, 100, 1, 5, 25, 10];
+      oints.sort(function (a, b) {
+        return a - b;
+      });
+      document.getElementById("demo").innerHTML =
+        "the lowest number is" + oints[0];
+    </script>
+    <!--Array Iterations->-->
+    <!--1.JS Array forEach()-is calls a function (a callback function) once for each array element-->
+    <script>
+      const fg = [33, 44, 22, 55, 99];
+      let yh = "";
+      fg.forEach(jk);
+      document.getElementById("demo").innerHTML = yh; //the result is 3344225599
+      function jk(value) {
+        yh += value;
+      }
+    </script>
+    <script>
+      let num = [2, 8, 9, 7, 4, 5];
+      num.forEach(quarter);
+      num.forEach(result);
+      function double(element, index, arrey) {
+        arrey[index] = element * 2;
+      }
+      function triple(element, index, arrey) {
+        arrey[index] = element * 3;
+      }
+      function quarter(element, index, arrey) {
+        arrey[index] = element * 4;
+      }
+      function result() {
+        document.getElemHTMLentById("demo").innerHTML = num; //the result is 8,32,36,28,16,20
+      }
+    </script>
+    <script>
+      const mnm = ["orange", "mango", "apple", "banana"];
+      mnm.forEach(fo);
+      mnm.forEach(display);
+      function fo(element, index, arrey) {
+        arrey[index] = element.toUppercase();
+      }
+      function display() {
+        document.getElemHTMLentById("demo").innerHTML = mnm;
+      }
+    </script>
+    <!--2.JS Array map()--->
+    <!--The map() method creates a new array by performing a function on each array element.
+      -The map() method does not execute the function for array elements without values.
+       -The map() method does not change the original array.-->
+    <script>
+      const bg = [22, 23, 44, 34, 54];
+      const bg2 = bg.map((value) => value * 2);
+      document.getElementById("demo").innerHTML = bg2; //the result is 44,46,88,68,108
+    </script>
+    <!--3.JS Array filter()-creates a new arrey with array elements that pass a test.-->
+    <script>
+      const zx = [22, 4, 5, 11, 21, 13, 12];
+      let xz = zx.filter((value) => value > 18);
+      document.getElementById("demo").innerHTML = xz; //the result is 22,21.
+    </script>
+    <!--4.JS Array reduce()- method runs a function on each array element to produce a single value.-->
+    <!--The reduce() method works from left-to-right in the array. See also reduceRight().-->
+    <!--The reduce() method does not reduce the original array.-->
+    <script>
+      const po = [11, 4, 43, 51];
+      let op = po.reduce((value, total) => value + total);
+      document.getElementById("demo").innerHTML = op; //the result is 109.
+    </script>
+    <!--the reduce() method can accept an initial value -->
+    <script>
+      const df = [11, 4, 43, 51];
+      let fd = po.reduce((value, total) => value + total, 100);
+      document.getElementById("demo").innerHTML = fd; //the result is 209.
+    </script>
+    <!--or-->
+    <script>
+      const gj = [11, 4, 43, 51];
+      let jg = gj.reduce(mob, 100);
+      function mob(value, total) {
+        return value + total;
+      }
+      document.getElementById("demo").innerHTML = jg; //the result  is 209
+    </script>
+    <!--5.JS Array reduceRight()-its the same as reduce but it works from right-to-left-->
+    <!--6.JS Array every()- method checks if all array values pass a test.-->
+    <script>
+      const lp = [11, 4, 43, 51];
+      let bm = lp.reduce(mob);
+      function mob(value) {
+        return value > 18;
+      }
+      document.getElementById("demo").innerHTML = "all value is over 18 " + bm; //the resul is false. b/c 4 and 11 are below 18
+    </script>
+    <!--7.JS Array some()-method checks if some array values pass a test.-->
+    <script>
+      const ds = [11, 4, 43, 51];
+      let sd = ds.some(mob);
+      function mob(value) {
+        return value > 18;
+      }
+      document.getElementById("demo").innerHTML = "some value is over 18 " + sd; //the resul is true. b/c some elements are over 18.
+    </script>
+    <!--8.JS Arrey, Array.from()-has an optional parameter which allows you to execute a function on each element of the new array:-->
+    <script>
+      const cs = [11, 4, 43, 51];
+      const lc = Array.from(cs, (value) => value * 2);
+      document.getElementById("demo").innerHTML = lc;
+    </script>
+    <!--JS Array with objecs-->
+    <script>
+      const vie = [
+        { name: "apple", color: "red", price: "10$" },
+        { name: "banana", color: "yello", price: "5$" },
+        { name: "orange", color: "green", price: "6$" },
+      ];
+      let lf = vie.map((value) => value.name);
+      document.getElementById("demo").innerHTML = lf; //the result is apple,banana,orange.
+    </script>
+    <script>
+      const mie = [
+        { name: "apple", color: "red", price: "10" },
+        { name: "banana", color: "yello", price: "5" },
+        { name: "orange", color: "green", price: "6" },
+        { name: "mango", color: "yellow", price: "13" },
+      ];
+      let highprice = mie.reduce((pir, vv) =>
+        vv.price < pir.price ? vv : pir,
+      );
+      document.getElementById("demo").innerHTML = highprice.name;
+    </script>
+    <!--9.the keys()method-returns an array iterator object with the key of an array-->
+    <script>
+      const cars = ["volvo", "ford", "toyota"];
+      const keys = cars.keys();
+      let bv = "";
+      for (const x of keys) {
+        bv += x + "<br>";
+      }
+      document.getElementById("demo").innerHTML = bv;
+    </script>
+    <!--10.js Array entries()-method returns an array with ket/values pairs -->
+    <script>
+      const qn = ["banana", "mango", "papaya"];
+      const ol = qn.entries();
+
+      for (let x of ol) {
+        document.getElementById("demo").innerHTML += x + "<br>";
+      }
+    </script>
+    <!--JS Array const->Array declared with var can be initialized any time-->
+    <script>
+      carss = ["ford", "toyta", "saab"];
+      var carss;
+      document.getElementById("demo").innerHTML = carss[0];
+    </script>
+    <script>
+      carss = ["ford", "toyta", "saab"];
+      var carss;
+      document.getElementById("demo").innerHTML = carss[0]; //the result is ford, toyota, saab
+    </script>
+    <!--const block scoop-An Array declared with const has Block Scoop-->
+    <script>
+      const vxv = ["bmw", "ford", "saab"]; //here vxv[0] is bmw
+      {
+        const vxv = ["ford", "saab", "bmw"]; //here vxv[0] is ford
+      }
+      document.getElementById("demo").innerHTML = vxv[0]; //the result is bmw
+    </script>
+    <!--An Array declared with var does not have block scoop-->
+    <script>
+      var cars = ["Saab", "Volvo", "BMW"];
+      // Here cars[0] is "Saab"
+      {
+        var cars = ["Toyota", "Volvo", "BMW"];
+        // Here cars[0] is "Toyota"
+      }
+
+      document.getElementById("demo").innerHTML = cars[0]; //the result is toyota
+    </script>
+    <!--JS Sets-
+    you can create a javascript set by
+    1.passing an array to new set()
+    2.create an arrey empty set use add() to add values-->
+    <!--1.The new Set()method-->
+    <script>
+      const lettes = new Set(["a", "b", "c"]); //create a set
+      //display set.size
+      document.getElementById("demo").innerHTML =
+        "the set has" + lettes.size + "" + "values"; //the result is the se has 3 values
+    </script>
+    <!--create set()and add()values-->
+    <script>
+      const lett = new Set(); //create a set
+      //add values to the set
+      lett.add("a");
+      lett.add("b");
+      lett.add("c");
+      lett.add("d");
+      document.getElementById("demo").innerHTML =
+        "the set has" + "" + lett.size + "" + "value"; //the result is the set has 4 values
+    </script>
+    <script>
+      // Create a new Set
+      const letters = new Set(["a", "b", "c"]);
+
+      // Add a new Element
+      letters.add("d");
+      letters.add("e");
+
+      // Display set.size
+      document.getElementById("demo").innerHTML =
+        "The set has " + letters.size + " values."; //the result is The set has 5 values.
+    </script>
+    <script>
+      //if you add equal elements, only the first will be saverd
+      // Create a Set
+      const leters = new Set();
+
+      // Add Values to the Set
+      letters.add("a");
+      letters.add("b");
+      letters.add("c");
+      letters.add("c");
+      letters.add("c");
+      letters.add("c");
+      letters.add("c");
+      letters.add("c");
+
+      // Display the Size
+      document.getElementById("demo").innerHTML =
+        "The set has " + leters.size + " values."; //the result is The set has 3 values
+    </script>
+    <!--Listing the elements-tou can list all set elements (values) with a for-of loop-->
+    <script>
+      const lkj = ["a", "b", "c", "d"];
+      for (let x of lkj) {
+        document.getElementById("demo").innerHTML += x + "<br>"; //the result is vertically a b c d
+      }
+    </script>
+    <!--sets are objects-->
+    <!--type of return object-->
+    <script>
+      // Create a new Set
+      const letters = new Set(["a", "b", "c"]);
+
+      // Display typeof
+      document.getElementById("demo").innerHTML =
+        "The type of the set is " + typeof letters; //the result is The type of the set is object
+    </script>
+    <!--instanceof set returns true -->
+    <script>
+      // Create a new Set
+      const letters = new Set(["a", "b", "c"]);
+
+      // Display typeof
+      document.getElementById("demo").innerHTML = letters instanceof Set; //the result is true
+    </script>
+    <!--JS  Set methods-->
+    <!--1.new Set()method-->
+    <!--2.add()method-->
+    <!--3.size()method-->
+    <!--listing set elements(values)->for-of loop-->
+    <!--4.has()method-returns true if a specified value exixts in a set-->
+    <script>
+      //create a set
+      const xv = new Set(["a", "b", "c", "d"]);
+      //does the set contain 'e'?
+      answer = xv.has("e");
+      document.getElementById("demo").innerHTML = "the answer is " + answer; //the result is the answer is false.
+    </script>
+    <!--5.forEach()methold- invokes(calling) a function for each set elements-->
+
+    <script>
+      // Create a Set
+      const lette = new Set(["a", "b", "c"]);
+
+      // List all Elements
+      let tbxt = "";
+      lette.forEach(function (value) {
+        tbxt += value + "<br>";
+      });
+      document.getElementById("demo").innerHTML = tbxt; //the value is vetically a b c.
+    </script>
+    <!--6.the values()method-returns an iterator object with the values in a set-->
+    <script>
+      // Create a Set
+      const leers = new Set(["a", "b", "c"]);
+
+      // List all Elements
+      let teb = "";
+      for (const x of leers.values()) {
+        teb += x + "<br>";
+      }
+
+      document.getElementById("demo").innerHTML = teb;
+    </script>
+    <!--or-->
+    <script>
+      // Create a Set
+      const tters = new Set(["a", "b", "c"]);
+
+      // Create an Iterator
+      const myiterator = tters.values();
+
+      // List all Elements
+      let bxt = "";
+      for (const x of myiterator) {
+        bxt += x + "<br>";
+      }
+
+      document.getElementById("demo").innerHTML = bxt;
+    </script>
+    <!--7.the keys()method-returns a Set Iterator with all the values from a Set.-->
+    <script>
+      // Create a Set
+      const etters = new Set(["a", "b", "c"]);
+
+      // Create an Iterator
+      const myIterator = etters.keys();
+
+      // List all Elements
+      let tjt = "";
+      for (const x of myIterator) {
+        tjt += x + "<br>";
+      }
+
+      document.getElementById("demo").innerHTML = tjt;
+    </script>
+    <!--8.the entries()method-method returns an Iterator with [value,value] pairs from a Set. -->
+
+    <!--Note
+     The entries() method is supposed to return a [key,value] pair from an object.
+
+     A Set has no keys, so the entries() method returns [value,value].
+
+      This makes Sets compatible with Maps.-->
+    <script>
+      // Create a Set
+      const lers = new Set(["a", "b", "c"]);
+
+      // Get all Entries
+      const iterator = lers.entries();
+
+      // List all Entries
+      let tnt = "";
+      for (const entry of iterator) {
+        tnt += entry + "<br>";
+      }
+
+      document.getElementById("demo").innerHTML = tnt;
+    </script>
+    <!--JS Set Logic-->
+    <!--1.union()method-the union method returnns the umion of two sets-->
+    <!--The union() method returns a new set containing the elements which are in this set, or in the argument set, or in both:-->
+    <script>
+      const A = new Set(["a", "b", "c"]);
+      const B = new Set(["d", "e", "f"]);
+      for (let g of A.union(B)) {
+        document.getElementById("demo").innerHTML += "The union is" + g; //the result is The union isa The union isb The union isc The union isd The union ise The union isf
+      }
+    </script>
+    <!--or -->
+    <script>
+      const C = new Set(["a", "b", "c"]);
+      const D = new Set(["d", "e", "f"]);
+      const E = C.union(D);
+      let nbn = "";
+      for (let h of E) {
+        nbn += h;
+      }
+      document.getElementById("demo").innerHTML = "the union is " + nbn;
+    </script>
+    <!--2.intercectio()method-the interction of two sets-->
+    <!--The intersection() method returns a new set containing the elements which are in this set and in the argument set:-->
+    <script>
+      const F = new Set(["e", "b", "c"]);
+      const G = new Set(["a", "b", "c", "e"]);
+      let inter = F.intersection(G);
+      let ress = "";
+      for (const v of inter) {
+        ress = v;
+      }
+      document.getElementById("demo").innerHTML = v; //the resul  is c
+    </script>
+    <!--or-->
+    <script>
+      const I = new Set(["a", "b", "c"]);
+      const O = new Set(["a", "e", "b"]);
+      const P = I.intersection(O);
+      let nsn = "";
+      for (let l of P) {
+        nsn += l;
+      }
+      document.getElementById("demo").innerHTML = "the intersection is " + nsn; //the result is the intersection is ab
+    </script>
+    <!--3.The difference()method-returns the difference between two sets.
+
+     The difference() method returns a new set containing elements which are in this set but not in the argument set:-->
+    <script>
+      const H = new Set(["a", "b", "c"]);
+      const K = new Set(["b", "c", "d"]);
+      for (const Y of H.difference(K)) {
+        document.getElementById("demo").innerHTML = Y; //the result is a
+      }
+    </script>
+    <!--or-->
+    <script>
+      const J = new Set(["a", "b", "c"]);
+      const V = new Set(["b", "c", "d"]);
+      for (const Y of V.difference(J)) {
+        document.getElementById("demo").innerHTML = Y; //the result is d
+      }
+    </script>
+    <!--4.The symmetricDifference() Method-->
+    <!-- method returns the symmetric difference between to sets.
+
+     The symmetricDifference() method returns a new set containing elements which are in this set or in the argument set, but not in both:-->
+    <script>
+      const T = new Set(["a", "b", "c"]);
+      const X = new Set(["b", "c", "d"]);
+      const DS = T.symmetricDifference(X);
+      let vcvc = "";
+      for (const x of DS) {
+        vcvc += x;
+      }
+      document.getElementById("demo").innerHTML =
+        "symmetric differnce is " + vcvc; //the result is ad
+    </script>
+    <!--5.isSubsetOf()- method returns true if all elements in this set is also elements in the argument set:-->
+    <script>
+      const KK = new Set(["a", "b", "c"]);
+      const SS = new Set(["b", "c", "d"]);
+      let answer = KK.isSubsetOf(SS);
+
+      document.getElementById("demo").innerHTML = answer; //the result is false b/c of d
+    </script>
+    <!--6.isSupersetOf-The isSupersetOf() method returns true if all elements in the argument set are also in this set:-->
+    <!--same as isSubsetOf()-->
+    <!--7.The isDisjointFrom() Method
+     The isDisjointFrom() method returns true if this set has no elements in common with the argument set:-->
+    <script>
+      const AA = new Set(["a", "b", "c"]);
+      const BB = new Set(["s", "f", "d"]);
+
+      answer = AA.isDisjointFrom(BB);
+
+      document.getElementById("demo").innerHTML = answer; //the result is true
+    </script>
+    <!--JS Set weakset-A JavaScript WeakSet is a collection of values where the values must be objects.-->
+    <!--A WeakSet holds weak references to its values.-->
+    <script>
+      let mySet = new WeakSet();
+      let myOObj = {
+        fname: "jhon",
+        lname: "abraham",
+      };
+      mySet.add(myOObj);
+      let ansewer = mySet.has(myOObj);
+      document.getElementById("demo").innerHTML = "Do I have object?" + ansewer; //the result is Do I have object?true
+    </script>
+    <script>
+      // Create a WeakSet
+      let mySett = new WeakSet();
+
+      // Create an Object
+      let myObjj = { fname: "John", lname: "Doe" };
+
+      // Add the Object
+      mySett.add(myObjj);
+
+      // Delete the Object
+      mySett.delete(myObjj);
+
+      // Do I have myObj in the mySet?
+      let annswer = mySett.has(myObjj);
+
+      document.getElementById("demo").innerHTML =
+        "Do I have myObj? is " + annswer; //Do I have myObj? is false
+    </script>
+    <!--Tracking Objects-->
+    <!--A WeakSet is similar to a Set, but it only stores objects, and holds them weakly. If there are no other references to an object, it gets garbage collected automatically.
+
+     This makes it handy for tracking objects without storing extra data (like counts).-->
+    <script>
+      let teexxt = "";
+      //create WeakSet to track persons
+      const peerssons = new WeakSet();
+      //create visitor objects
+      const john = { name: "john", age: 22 };
+      const haile = { name: "haile", age: 32 };
+      const paul = { name: "paul", age: 21 };
+      const ringo = { name: "ringo", age: 23 };
+      //Track visits
+
+      track(haile);
+      track(paul);
+      track(john);
+      track(haile);
+      //Function to track visitors
+      function track(visitor) {
+        if (peerssons.has(visitor)) {
+          teexxt += visitor.name + "is visiting again.<br>";
+        } else {
+          teexxt +=
+            visitor.name +
+            ",age" +
+            visitor.age +
+            ",is visiting the first time.<br>";
+        }
+      }
+      document.getElementById("demo").innerHTML = teexxt;
+    </script>
+    <!--JS Map-->
+    <!--A JavaScript Map is an object that can store collections of key-value pairs, similar to a dictionary in other programming languages.
+        Maps differ from standard objects in that keys can be of any data type.-->
+
+    <!--Note
+           Maps are similar to both Objects (unique key/value collection) and Arrays (ordered values collection).
+           But if you look close, Maps are most similar to Objects.-->
+
+    <!--You create a JavaScript Map by:
+              -Create a new Map and add elements with Map.set()
+              -Passing an existing Array to the new Map() constructor-->
+    <script>
+      const jfj = new Map([
+        ["apple", 300],
+        ["papaya", 100],
+        ["banana", 400],
+      ]);
+      jfj.set("mango", 500); //adding map values
+      let hhn = jfj.get("mango"); //displying results//the get() method gets the value of a key in a Map.
+      document.getElementById("demo").innerHTML = hhn; //the result is 500
+    </script>
+    <!--method of map() is similar to set()-->
+    <!--    methods of map():-
+           1.new Map()-constractor
+           2.map.get()-you can get the value of a key in a map
+           3.map.size()-returns the number of elements in a map
+           4.map.set()-to add elements to a map
+           5.map.delete()-remove a map element.
+           6.map.clear()-removes all the elements from a map.
+           7.map.has()-retuns true if a key exists in a map-->
+    <script>
+      // Create a Map
+      const uit = new Map([
+        ["apples", 500],
+        ["bananas", 300],
+        ["oranges", 200],
+      ]);
+
+      // Delete an Element
+      uit.delete("apples");
+
+      document.getElementById("demo").innerHTML = uit.has("apples");
+    </script>
+    <!--8.map.forEach()-method invokes a callback for each key/value pair in a map-->
+    <script>
+      const wew = new Map([
+        ["mango", 500],
+        ["papaya", 300],
+        ["banana", 200],
+      ]);
+      let vnb = "";
+      wew.forEach(function (x) {
+        vnb += x + "<br>";
+      });
+      document.getElementById("demo").innerHTML = vnb;
+    </script>
+    <!--9.map.entries()-returns an iterator object with the [key,values]in a map-->
+    <script>
+      const bvbv = new Map([
+        ["banana", 400],
+        ["orange", 200],
+        ["mango", 100],
+      ]);
+      let nbnv = "";
+      for (const x of bvbv.entries()) {
+        nbnv += x + "<br>";
+      }
+      document.getElementById("demo").innerHTML = nbnv; //the result is vertically banana, 400 orange, 200, mango, 100.
+    </script>
+    <!--10.map.keys()-returns an iterator object with the key in a map-->
+    <script>
+      const bbv = new Map([
+        ["banana", 400],
+        ["orange", 200],
+        ["mango", 100],
+      ]);
+      let nnv = "";
+      for (const x of bbv.keys()) {
+        nnv += x + "<br>";
+      }
+      document.getElementById("demo").innerHTML = nnv; //the result is vertically banana,orange,mango.
+    </script>
+    <!--11.map.values()-returns an iterator object with values in a map-->
+    <script>
+      const vbv = new Map([
+        ["banana", 400],
+        ["orange", 200],
+        ["mango", 100],
+      ]);
+      let nnvv = "";
+      for (const x of vbv.keys()) {
+        nnvv += x + "<br>";
+      }
+      document.getElementById("demo").innerHTML = nnvv; //the result is vertically 400,200,100.
+    </script>
+    <!--object as keys-->
+    <script>
+      // Create Objects
+      const apples = { name: "Apples" };
+      const bananas = { name: "Bananas" };
+      const oranges = { name: "Oranges" };
+
+      // Create a Map
+      const fruits = new Map();
+
+      // Add the Objects to the Map
+      fruits.set(apples, 500);
+      fruits.set(bananas, 300);
+      fruits.set(oranges, 200);
+
+      document.getElementById("demo").innerHTML = fruits.get(apples);
+    </script>
+    <!--12.-->
+    <!--2.The get() method gets the value of a key in a Map. -->
+    <script>
+      // Create a Map
+      const fts = new Map([
+        ["apples", 500],
+        ["bananas", 300],
+        ["oranges", 200],
+      ]);
+
+      document.getElementById("demo").innerHTML = fts.get("apples"); //the result is 500.
+    </script>
+    <!--JS RegExp-->
+    <!--regular experaction are often used with the string method-->
+    <!--regex with string methods
+ 1.match(regex)-returns an array of results
+ 2.replace(regex)-returns a new string
+ 3.search(regex)-returns the index of the first match-->
+    <!--1.match(regex)-->
+    <script>
+      let wq = "haile gebeeyy";
+      let qw = wq.match(/haile/);
+      document.getElementById("demo").innerHTML = qw; //the result is haile.
+    </script>
+
+    <!--2.replace(regex)-->
+    <p id="jh">haile gebb</p>
+    <script>
+      let yuy = document.getElementById("jh").innerHTML;
+      yuy = yuy.replace(/gebb/i, "nigusse");
+      document.getElementById("jh").innerHTML = yuy; //the result is haile nigusse
+    </script>
+    <!--or-->
+    <script>
+      let wq = "haile gebeeyy";
+      let qw = wq.replace(/haile/i, "nnn");
+      document.getElementById("demo").innerHTML = qw; //the result is nnn gebeeyy.
+    </script>
+    <!--3.search-returns index (postion) of first match-->
+    <!-- -1 is not founded-->
+    <script>
+      let kllk = "haile gebb";
+      let lklk = kllk.search(/gebb/);
+      document.getElementById("demo").innerHTML = lklk; //the result is 6 b/c this means 'gebb' starts at index of 6.
+    </script>
+    <!--JS RexExp Alternative(OR) denoted by |-->
+    <script>
+      let animm = "this the cat";
+      let ressl = animm.match(/dog|cat/);
+      document.getElementById("demo").innerHTML = ressl; //the result is cat. b/c dog is not exist on animm.
+    </script>
+    <!--JS RegEx flags-->
+    <!--/pattern/flags-->
+    <!--1./g-a global match(find all)-->
+    <script>
+      let annim = "cat dog cow cat";
+      let reees = annim.match(/cat/g);
+      document.getElementById("demo").innerHTML = reees; //the result is cat,cat b/c it doesn't display only the first element like .match incase of /g it display all elements same as the result question.
+    </script>
+    <!--2./i-it is insensetive meaning it ignour the upper and lower cases-->
+    <script>
+      let dsd = "haile"; //'h'is lowercase
+      let sds = dsd.match(/Haile/i); //'H'is uppercase
+      document.getElementById("demo").innerHTML = sds; //the result is haile b/c /i
+    </script>
+    <!--3./d-flag specifies the start and the end of a match.  --->
+    <script>
+      let saa = "assaas";
+      let aas = saa.match("/as" / "sa" / d);
+      document.getElementById("demo").innerHTML = aas; //the result is
+    </script>
+    <!--RegExp Metacharacter-->
+    <!--1.\w(word)-->
+    <script>
+      let rqq = "give 100%";
+      let pattern = /\w/g; //for word
+      let eew = rqq.match(pattern);
+      document.getElementById("demo").innerHTML = eew;
+    </script>
+    <!--2.\d(digit)-->
+    <script>
+      let yosif = "yoseph give me 100 birr";
+      let josi = /\d/g; //for digit.
+      let both = yosif.match(josi);
+      document.getElementById("demo").innerHTML = both;
+    </script>
+    <!--JS RegExp Flags-->
+    <!--/d(performs substring matches(new 2022))--->
+  </body>
+</html>

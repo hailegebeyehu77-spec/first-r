@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+      outerLoop: for (let i = 0; i < 3; i++) {
+        innerLoop: for (let j = 0; j < 3; j++) {
+          if (i === 1 && j === 1) {
+            break outerLoop;
+          }
+          console.log(`i: ${i}, j: ${j}`); //
+        }
+      }
+    </script>
+    <!--loops-->
+    <script>
+      function getVowelCount(sentence) {
+        const vowels = "aeiou";
+        let count = 0;
+        for (let val of sentence.toLowerCase()) {
+          if (vowels.includes(val)) {
+            count++;
+          }
+        }
+        return count; //counting vowels
+      }
+      let rrer = getVowelCount("Hello World");
+      document.getElementById("demo").innerHTML =
+        `the number of vowels in this sentences is ${rrer}`; //the result is "the number of vowels in this sentences is 3" because the getVowelCount function takes a sentence as input and counts the number of vowels (a, e, i, o, u) in that sentence. It converts the sentence to lowercase to ensure that it counts both uppercase and lowercase vowels. The function iterates through each character in the sentence and checks if it is a vowel by using the includes method on the string of vowels. If it finds a vowel, it increments the count variable. Finally, it returns the total count of vowels found in the sentence. In this case, "Hello World" contains three vowels: 'e', 'o', and 'o'.
+      let rrer1 = getVowelCount("I am a student");
+      document.getElementById("demo1").innerHTML =
+        `the number of vowels in this sentences is ${rrer1}`; //the result is "the number of vowels in this sentences is 6" because the getVowelCount function counts the number of vowels in the input sentence "I am a student". The function converts the sentence to lowercase and iterates through each character, checking if it is a vowel (a, e, i, o, u). In this case, the sentence contains six vowels: 'I', 'a', 'a', 'u', 'e', and 't'. Therefore, the function returns a count of 6, which is displayed in the HTML element with id "demo1".
+    </script>
+    <script>
+      function countConsonants(sentence) {
+        //counting consonants
+        const vowel = "aeiou";
+        let count = 0;
+        for (let consonant of sentence.tlLowerCase) {
+          if (!vowel.includs(consonant) && consonant.match(/[a-z]/i)) {
+            count++;
+          }
+        }
+        return count;
+      }
+      let rrer2 = countConsonants("Hello World");
+      document.getElementById("demo").innerHTML = rrer2; //the result is "7" because the countConsonants function counts the number of consonants in the input sentence "Hello World". The function defines a string of vowels and initializes a count variable to zero. It then iterates through each character in the sentence, checking if it is not a vowel and is an alphabetic character (using a regular expression). If both conditions are met, it increments the count variable. In this case, "Hello World" contains seven consonants: 'H', 'l', 'l', 'W', 'r', 'l', and 'd'. Therefore, the function returns a count of 7, which is displayed in the HTML element with id "demo".
+      let rrer3 = countConsonants("I am a student");
+      document.getElementById("demo1").innerHTML = rrer3; //the result is "8" because the countConsonants function counts the number of consonants in the input sentence "I am a student". The function defines a string of vowels and initializes a count variable to zero. It then iterates through each character in the sentence, checking if it is not a vowel and is an alphabetic character (using a regular expression). If both conditions are met, it increments the count variable. In this case, "I am a student" contains eight consonants: 'm', 's', 't', 'd', 'n', 't', 's', and 't'. Therefore, the function returns a count of 8, which is displayed in the HTML element with id "demo1".
+    </script>
+    <script>
+      function getPunctuationCount(sentence) {
+        const punctuations = ".,!?;:-()[]{}\"'–";
+        let count = 0;
+
+        for (const char of sentence) {
+          if (punctuations.includes(char)) {
+            count++;
+          }
+        }
+        return count;
+      }
+      let punctuationCount = getPunctuationCount("WHAT?!?!?!?!?");
+      document.getElementById("demo").innerHTML =
+        `Punctuation Count: ${punctuationCount} `; //the result is "Punctuation Count: 10" because the getPunctuationCount function counts the number of punctuation characters in the input sentence "WHAT?!?!?!?!?". The function defines a string of punctuation characters and initializes a count variable to zero. It then iterates through each character in the sentence, checking if it is included in the string of punctuations. If it finds a punctuation character, it increments the count variable. In this case, the sentence contains ten punctuation characters: '!', '?', '!', '?', '!', '?', '!', '?', '!', and '?'. Therefore, the function returns a count of 10, which is displayed in the HTML element with id "demo".
+    </script>
+    <script></script>
+  </body>
+</html>

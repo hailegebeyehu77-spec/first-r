@@ -1,0 +1,20 @@
+#num {
+  display: block;
+  text-align: center;
+  font-size: 10em;
+  font-family: "Times New Roman", Times, serif;
+}
+#nocounters {
+  text-align: center;
+}
+.buttons {
+  font-size: 2em;
+  color: white;
+  background-color: rgb(194, 125, 235);
+  transition: 0.5s;
+  font-weight: 700;
+  transform: solid 1px;
+}
+.buttons:hover {
+  color: black;
+}

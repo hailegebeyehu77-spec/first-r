@@ -1,0 +1,9 @@
+{
+  "short_name": "Spa & Sauna",
+  "name": "Spa, Sauna, and Morocco Work & Maintenance Company",
+
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#4CAF50",
+  "background_color": "#FFFFFF"
+}

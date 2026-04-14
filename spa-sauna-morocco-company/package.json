@@ -1,0 +1,31 @@
+{
+  "name": "spa-sauna-morocco-company",
+  "version": "1.0.0",
+  "description": "A React application for a spa, sauna, and Morocco work and maintenance company.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "spa",
+    "sauna",
+    "Morocco",
+    "maintenance",
+    "react"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  },
+  "homepage": "http://yourwebsite.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hailegebeyehu77-spec/first-r.git"
+  }
+}

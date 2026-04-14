@@ -1,0 +1,15 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+#myrandom {
+  font-size: 3rem;
+  padding: 2px 25px;
+  font-weight: 900;
+  color: red;
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 10px;
+  background-color: yellow;
+}
